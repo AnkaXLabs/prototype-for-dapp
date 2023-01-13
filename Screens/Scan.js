@@ -16,7 +16,8 @@ import {
 } from "react-native"
 import { COLORS, SIZES, FONTS, icons, images } from "../constants"
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import { Dumdum } from '.';
+import { Dumdum, Trash } from './index';
+
 
 export default function Scan({ navigation }) {
   const [hasPermission, setHasPermission] = useState(null);
@@ -30,21 +31,36 @@ export default function Scan({ navigation }) {
 
 
 
-  const [enteredcode, setenteredcode] = useState('');
+  ///this part is to change the place holder
+  
+  const[ph1,setplaceholder]=useState('');
+  
+  function pholder(ph1){
+    setplaceholder(ph1);
 
-  const barcodeBox = <View style={styles.barcodebox}>
-    <BarCodeScanner
-      onBarCodeScanned={scanned && modalVisible ? undefined : handleBarCodeScanned}
-      style={{ height: 400, width: 400 }} />
-  </View>
+  }
+  
+
+
+  const [enteredcode, setenteredcode] = useState('');
 
   function codehandel(enteredtext) {
     setenteredcode(enteredtext);
   }
+
   function submit() {
+
+
     props.onAddGoal(enteredcode);
     setenteredcode('');
   }
+
+const dummydevice=1234;
+
+
+
+
+
 
   const askForCameraPermission = () => {
     (async () => {
@@ -72,6 +88,9 @@ export default function Scan({ navigation }) {
   //   return (
   //     <Dumdum></Dumdum>)
   // }
+
+
+
   if (hasPermission === false) {
     return (
       <View style={styles.container}>
@@ -122,7 +141,7 @@ export default function Scan({ navigation }) {
                     borderRadius: 10
 
                   }}
-                  placeholder=""
+                  placeholder={ph1}
                   placeholderTextColor={COLORS.white}
                   selectionColor={COLORS.white}
                   onChangeText={codehandel}
@@ -132,7 +151,16 @@ export default function Scan({ navigation }) {
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignContent: 'center', alignItems: 'center' }}>
                   <TouchableOpacity style={styles.Button} onPress={() => {
                     console.log(enteredcode); submit;
+                    codehandel('') ;
+                    if(enteredcode==1234){
+                      setModalVisible(!modalVisible)
+                      setOpaticity('rgba(0,0,0,0)')
+                      navigation.navigate(Trash)
+                    }
+                    else(
+                      pholder('ENTERED CODE IS WRONG!!!')
 
+                    )
 
                   }}>
                     <Text style={{ color: "black", fontWeight: "600" }}>submit</Text>
@@ -158,7 +186,12 @@ export default function Scan({ navigation }) {
 
       <View>
 
-        {hasPermission === null ? <Dumdum></Dumdum> : barcodeBox}
+        {hasPermission === null ? <Dumdum></Dumdum> : <View style={styles.barcodebox}>
+          <BarCodeScanner
+            onBarCodeScanned={scanned && modalVisible ? undefined : handleBarCodeScanned}
+            style={{ height: 400, width: 400 }} />
+        </View>}        
+                    {/* here we are either showing loading screen or the qr barcode box */}
 
         <Text style={styles.maintext}>{text}</Text>
 
@@ -174,7 +207,7 @@ export default function Scan({ navigation }) {
             onPress={() => {
               setModalVisible(true)
               setOpaticity('rgba(0,0,0,0.5)')
-
+              pholder('')
             }
             }
           /////       this button will pop up the modal screen
