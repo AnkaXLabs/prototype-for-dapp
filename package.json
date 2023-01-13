@@ -57,7 +57,8 @@
     "react-native-safe-area-context": "4.2.4",
     "react-native-torch": "^1.2.0",
     "react-native-web": "0.17.7",
-    "react-navigation": "^4.4.4"
+    "react-navigation": "^4.4.4",
+    "wagmi":"^0.4.8"
  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.1",
