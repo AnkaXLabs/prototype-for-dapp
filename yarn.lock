@@ -3544,7 +3544,7 @@
     "@urql/core" ">=2.3.1"
     wonka "^4.0.14"
 
-"@wagmi/core@^0.3.8":
+"@wagmi/core@^0.3.7":
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/@wagmi/core/-/core-0.3.8.tgz#7f2d13a25f6d86e5ddcb31ec1d1c9af7efaa4736"
   integrity sha512-9wsd8YGW2ivjFwpkgAETn7cRbKOAddZz91vuh2VmIP2bWGiDuFA6RXy5/KLV/tGpvIIiCyGFO0JXpx+n4hFhgQ==
@@ -9995,7 +9995,7 @@ react-navigation@^4.4.4:
     "@react-navigation/core" "^3.7.9"
     "@react-navigation/native" "^3.8.4"
 
-react-query@^4.0.0-beta.23:
+react-query@^4.0.0-beta.19:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-query/-/react-query-4.0.0.tgz#d8a5347503d0aedebc957e35b408c4aa3f726580"
   integrity sha512-qiW+Yvbl+EK8iwPDJAj4qWAKceh+g8Up8jxoNxJbzhV3bNheeyHF3EyynnkDO3S+CYgSwtCUFaP8vOjB62j7xQ==
@@ -11669,15 +11669,15 @@ vue-eslint-parser@^9.0.1:
     lodash "^4.17.21"
     semver "^7.3.6"
 
-wagmi@^0.4.8:
-  version "0.4.12"
-  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-0.4.12.tgz#c79be680ceb17ab071c713ddc86e61fc01145522"
-  integrity sha512-YfpRAJyGL9YvtecYDf6cUT6yaIBksHK9JZyq3WlVMUfeTleFmsqCiIaIaKhlPcE+NZxSsUHz1jbZw8KLWTcwvA==
+wagmi@0.4.8:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-0.4.8.tgz#4fadc14d8947952464fdd8b7f2d3079985e14b1d"
+  integrity sha512-hflZRiO48J5TCXQoKSSOFNNQpYziEA228KkpuDVHAr5C/rfB1hfRmkNjaPKQFF/IP65JJmBR1uWR9U9u/T+BKg==
   dependencies:
     "@coinbase/wallet-sdk" "^3.2.0"
-    "@wagmi/core" "^0.3.8"
+    "@wagmi/core" "^0.3.7"
     "@walletconnect/ethereum-provider" "^1.7.8"
-    react-query "^4.0.0-beta.23"
+    react-query "^4.0.0-beta.19"
     use-sync-external-store "^1.1.0"
 
 walker@^1.0.7:
